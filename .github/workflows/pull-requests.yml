@@ -1,0 +1,62 @@
+name: PR build
+
+on: [ pull_request ]
+
+env:
+  APP: medlemskap-mini
+permissions:
+  contents: "read"
+  id-token: "write"
+  packages: "write"
+jobs:
+  build_and_push:
+    name: Build and publish Docker image for PR-branch
+    runs-on: ubuntu-latest
+    env:
+      IMAGE: ghcr.io/${{ github.repository }}:${{ github.sha }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Set up Java
+        uses: actions/setup-java@v4.3.0
+        with:
+          java-version: '20'
+          distribution: 'temurin'
+          check-latest: true
+      - name: Cache gradle dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle.kts') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Build with Gradle
+        run: ./gradlew test shadowJar --info
+        env:
+          ORG_GRADLE_PROJECT_githubUser: x-access-token
+          ORG_GRADLE_PROJECT_githubPassword: ${{ secrets.GITHUB_TOKEN }}
+      - uses: nais/docker-build-push@v0
+        id: docker-push
+        with:
+          team: medlemskap # required
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }} # required, but is defined as an organization variable
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }} # required, but is defined as an organization secret
+    outputs:
+      image: ${{ steps.docker-push.outputs.image }}
+
+  deploypreprod:
+    name: Deploy PR-branch to dev
+    needs: [build_and_push]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: nais/deploy/actions/deploy@v2
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_API_KEY }}
+          CLUSTER: dev-gcp
+          RESOURCE: deploy/preprod.yaml
+          IMAGE: ${{ needs.build_and_push.outputs.image }}
+          TELEMETRY: ${{ needs.build_and_push.outputs.telemetry }}
