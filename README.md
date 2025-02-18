@@ -1,4 +1,4 @@
-# medlemskap-mini
+# medlemskap-mini.
 Oppslagstjeneste for lovvalg og medlemskap i Folketrygden
 
 Denne tjenesten gjør REST-kall mot følgende tjenester/registre:
