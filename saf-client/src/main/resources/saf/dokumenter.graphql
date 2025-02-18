@@ -1,0 +1,28 @@
+query($brukerId: BrukerIdInput!, $tema: [Tema!], $journalstatuser: [Journalstatus!], $foerste: Int!) {
+    dokumentoversiktBruker(
+        brukerId: $brukerId,
+        tema: $tema,
+        journalstatuser: $journalstatuser,
+        foerste: $foerste) {
+        journalposter {
+            journalpostId
+            journalfortAvNavn
+            tittel
+            journalposttype
+            journalstatus
+            tema
+            sak {
+                fagsakId
+            }
+            datoOpprettet
+            relevanteDatoer{
+                dato
+                datotype
+            }
+            dokumenter {
+                dokumentInfoId
+                tittel
+            }
+        }
+    }
+}

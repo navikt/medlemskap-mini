@@ -1,0 +1,10 @@
+{
+  "fnr": "123456789",
+  "periode": {
+    "fom": "2019-01-01",
+    "tom": "2015-12-31"
+  },
+  "brukerinput": {
+    "arbeidUtenforNorge": false
+  }
+}

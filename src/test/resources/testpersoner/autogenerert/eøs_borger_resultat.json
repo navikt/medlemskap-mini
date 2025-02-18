@@ -1,0 +1,185 @@
+{
+  "regelId" : "REGEL_MEDLEM_KONKLUSJON",
+  "avklaring" : "Er bruker medlem?",
+  "begrunnelse" : "Bruker er medlem",
+  "svar" : "JA",
+  "harDekning" : null,
+  "dekning" : "",
+  "delresultat" : [ {
+    "regelId" : "REGEL_MEDL",
+    "avklaring" : "Har bruker avklarte opplysninger i MEDL?",
+    "begrunnelse" : "",
+    "svar" : "JA",
+    "harDekning" : null,
+    "dekning" : "",
+    "delresultat" : [ {
+      "regelId" : "REGEL_OPPLYSNINGER",
+      "avklaring" : "Finnes det registrerte opplysninger på bruker?",
+      "begrunnelse" : "Alle de følgende ble NEI",
+      "svar" : "NEI",
+      "harDekning" : null,
+      "dekning" : "",
+      "delresultat" : [ {
+        "regelId" : "REGEL_A",
+        "avklaring" : "Finnes det registrerte opplysninger i MEDL?",
+        "begrunnelse" : "",
+        "svar" : "NEI",
+        "harDekning" : null,
+        "dekning" : "",
+        "delresultat" : [ ]
+      }, {
+        "regelId" : "REGEL_C",
+        "avklaring" : "Finnes det dokumenter i JOARK på medlemskapsområdet?",
+        "begrunnelse" : "",
+        "svar" : "NEI",
+        "harDekning" : null,
+        "dekning" : "",
+        "delresultat" : [ ]
+      }, {
+        "regelId" : "REGEL_B",
+        "avklaring" : "Finnes det åpne oppgaver i GOSYS på medlemskapsområdet?",
+        "begrunnelse" : "",
+        "svar" : "NEI",
+        "harDekning" : null,
+        "dekning" : "",
+        "delresultat" : [ ]
+      } ]
+    } ]
+  }, {
+    "regelId" : "REGEL_ARBEIDSFORHOLD",
+    "avklaring" : "Er arbeidsforhold avklart?",
+    "begrunnelse" : "Regelflyt konkluderer med JA",
+    "svar" : "JA",
+    "harDekning" : null,
+    "dekning" : "",
+    "delresultat" : [ {
+      "regelId" : "REGEL_3",
+      "avklaring" : "Har bruker hatt et sammenhengende arbeidsforhold i Aa-registeret de siste 12 månedene?",
+      "begrunnelse" : "",
+      "svar" : "JA",
+      "harDekning" : null,
+      "dekning" : "",
+      "delresultat" : [ ]
+    }, {
+      "regelId" : "REGEL_4",
+      "avklaring" : "Er foretaket registrert i foretaksregisteret?",
+      "begrunnelse" : "",
+      "svar" : "JA",
+      "harDekning" : null,
+      "dekning" : "",
+      "delresultat" : [ ]
+    }, {
+      "regelId" : "REGEL_5",
+      "avklaring" : "Har arbeidsgiver sin hovedaktivitet i Norge?",
+      "begrunnelse" : "",
+      "svar" : "JA",
+      "harDekning" : null,
+      "dekning" : "",
+      "delresultat" : [ ]
+    }, {
+      "regelId" : "REGEL_6",
+      "avklaring" : "Er foretaket aktivt?",
+      "begrunnelse" : "",
+      "svar" : "JA",
+      "harDekning" : null,
+      "dekning" : "",
+      "delresultat" : [ ]
+    }, {
+      "regelId" : "REGEL_7",
+      "avklaring" : "Er arbeidsforholdet maritimt?",
+      "begrunnelse" : "",
+      "svar" : "NEI",
+      "harDekning" : null,
+      "dekning" : "",
+      "delresultat" : [ ]
+    }, {
+      "regelId" : "REGEL_8",
+      "avklaring" : "Er bruker pilot eller kabinansatt?",
+      "begrunnelse" : "",
+      "svar" : "NEI",
+      "harDekning" : null,
+      "dekning" : "",
+      "delresultat" : [ ]
+    }, {
+      "regelId" : "REGEL_9",
+      "avklaring" : "Har bruker utført arbeid utenfor Norge?",
+      "begrunnelse" : "",
+      "svar" : "NEI",
+      "harDekning" : null,
+      "dekning" : "",
+      "delresultat" : [ ]
+    } ]
+  }, {
+    "regelId" : "REGEL_BOSATT",
+    "avklaring" : "Er det avklart om bruker bor i Norge?",
+    "begrunnelse" : "Regelflyt konkluderer med JA",
+    "svar" : "JA",
+    "harDekning" : null,
+    "dekning" : "",
+    "delresultat" : [ {
+      "regelId" : "REGEL_10",
+      "avklaring" : "Er bruker folkeregistrert som bosatt i Norge og har vært det i 12 mnd?",
+      "begrunnelse" : "",
+      "svar" : "JA",
+      "harDekning" : null,
+      "dekning" : "",
+      "delresultat" : [ ]
+    } ]
+  }, {
+    "regelId" : "REGEL_STATSBORGERSKAP",
+    "avklaring" : "Er statsborgerskap avklart?",
+    "begrunnelse" : "Regelflyt konkluderer med JA",
+    "svar" : "JA",
+    "harDekning" : null,
+    "dekning" : "",
+    "delresultat" : [ {
+      "regelId" : "REGEL_2",
+      "avklaring" : "Er bruker omfattet av grunnforordningen (EØS)? Dvs er bruker statsborger i et EØS-land inkl. Norge?",
+      "begrunnelse" : "",
+      "svar" : "JA",
+      "harDekning" : null,
+      "dekning" : "",
+      "delresultat" : [ ]
+    }, {
+      "regelId" : "REGEL_11",
+      "avklaring" : "Er bruker norsk statsborger?",
+      "begrunnelse" : "Brukeren er ikke norsk statsborger",
+      "svar" : "NEI",
+      "harDekning" : null,
+      "dekning" : "",
+      "delresultat" : [ ]
+    } ]
+  }, {
+    "regelId" : "REGEL_EØS_BOSATT",
+    "avklaring" : "Er EØS-borger bosatt i Norge?",
+    "begrunnelse" : "Regelflyt konkluderer med JA",
+    "svar" : "JA",
+    "harDekning" : null,
+    "dekning" : "",
+    "delresultat" : [ {
+      "regelId" : "REGEL_11_2",
+      "avklaring" : "Har bruker ektefelle i PDL?",
+      "begrunnelse" : "Bruker har ikke ektefelle i PDL",
+      "svar" : "NEI",
+      "harDekning" : null,
+      "dekning" : "",
+      "delresultat" : [ ]
+    }, {
+      "regelId" : "REGEL_11_2_1",
+      "avklaring" : "Har bruker barn i PDL?",
+      "begrunnelse" : "Bruker har ikke barn i pdl",
+      "svar" : "NEI",
+      "harDekning" : null,
+      "dekning" : "",
+      "delresultat" : [ ]
+    }, {
+      "regelId" : "REGEL_11_2_2_1",
+      "avklaring" : "Har bruker uten ektefelle og folkeregistrerte barn jobbet mer enn 100 prosent?",
+      "begrunnelse" : "",
+      "svar" : "JA",
+      "harDekning" : null,
+      "dekning" : "",
+      "delresultat" : [ ]
+    } ]
+  } ]
+}

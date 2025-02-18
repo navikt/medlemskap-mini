@@ -1,0 +1,10 @@
+{
+  "fødselsnummer": "123456789",
+  "periode": {
+    "tom": "2019-12-31",
+    "fom": "2019-12-31"
+  },
+  "brukerinput": {
+    "arbeidUtenforNorge": false
+  }
+}

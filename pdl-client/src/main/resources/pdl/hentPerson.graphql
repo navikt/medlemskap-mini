@@ -1,0 +1,118 @@
+query($ident: ID!, $bostedHistorikk: Boolean!, $statsborgerskapHistorikk: Boolean!){
+    hentPerson(ident: $ident) {
+        forelderBarnRelasjon {
+            relatertPersonsIdent
+            relatertPersonsRolle
+            minRolleForPerson
+        },
+        statsborgerskap(historikk: $statsborgerskapHistorikk) {
+            land,
+            gyldigFraOgMed,
+            gyldigTilOgMed,
+            metadata {
+                historisk
+            }
+        },
+        sivilstand(historikk: $bostedHistorikk) {
+            type
+            gyldigFraOgMed
+            bekreftelsesdato
+            relatertVedSivilstand
+        },
+        adressebeskyttelse(historikk: false) {
+            gradering
+        },
+        bostedsadresse(historikk: true) {
+            angittFlyttedato
+            gyldigFraOgMed
+            gyldigTilOgMed
+            vegadresse { postnummer },
+            matrikkeladresse { postnummer },
+            ukjentBosted {
+                bostedskommune
+            },
+            utenlandskAdresse {
+                landkode
+            },
+            metadata {
+                historisk
+            }
+        },
+        opphold(historikk: true){
+            type
+            oppholdFra
+            oppholdTil
+            metadata{
+                historisk
+                master
+                endringer{
+                    type,
+                    kilde,
+                    registrert,
+                    registrertAv,
+                    systemkilde
+                }
+            }
+            folkeregistermetadata {
+                aarsak,
+                ajourholdstidspunkt,
+                gyldighetstidspunkt,
+                opphoerstidspunkt,
+                kilde
+            }
+        },
+        doedsfall{
+            doedsdato
+        },
+        kontaktadresse(historikk: true) {
+            gyldigFraOgMed
+            gyldigTilOgMed
+            utenlandskAdresse {
+                landkode
+            }
+            utenlandskAdresseIFrittFormat {
+                landkode
+            },
+            metadata {
+                historisk
+            }
+        },
+        oppholdsadresse(historikk: true) {
+            gyldigFraOgMed
+            gyldigTilOgMed
+            utenlandskAdresse {
+                landkode
+            },
+            metadata {
+                historisk
+            }
+        },
+        innflyttingTilNorge{
+            fraflyttingsland,
+            fraflyttingsstedIUtlandet,
+            metadata{
+                historisk
+            },
+            folkeregistermetadata {
+                aarsak
+                ajourholdstidspunkt,
+                gyldighetstidspunkt,
+                opphoerstidspunkt,
+                kilde
+            }
+        },
+        utflyttingFraNorge{
+            tilflyttingsland,
+            tilflyttingsstedIUtlandet,
+            utflyttingsdato,
+            metadata {
+                historisk
+            }
+        },
+        navn(historikk: false) {
+            fornavn,
+            mellomnavn,
+            etternavn
+        }
+    }
+}

@@ -1,0 +1,413 @@
+{
+  "fnr": "08026644373",
+  "periode": {
+    "fom": "2022-08-15",
+    "tom": "2022-09-02"
+  },
+  "førsteDagForYtelse": "2022-08-15",
+  "brukerinput": {
+    "arbeidUtenforNorge": false
+  },
+  "pdlpersonhistorikk": {
+    "statsborgerskap": [
+      {
+        "landkode": "NOR",
+        "fom": null,
+        "tom": null,
+        "historisk": false
+      }
+    ],
+    "bostedsadresser": [
+      {
+        "landkode": "NOR",
+        "fom": "1986-03-25",
+        "tom": "1986-10-07",
+        "historisk": true
+      },
+      {
+        "landkode": "NOR",
+        "fom": "1986-10-08",
+        "tom": "2006-03-13",
+        "historisk": true
+      },
+      {
+        "landkode": "NOR",
+        "fom": "2006-03-14",
+        "tom": "2010-09-16",
+        "historisk": true
+      },
+      {
+        "landkode": "NOR",
+        "fom": "2010-09-17",
+        "tom": null,
+        "historisk": false
+      }
+    ],
+    "kontaktadresser": [],
+    "oppholdsadresser": [],
+    "sivilstand": [
+      {
+        "type": "GIFT",
+        "gyldigFraOgMed": "1986-03-26",
+        "gyldigTilOgMed": "1997-09-18",
+        "relatertVedSivilstand": "04056746833"
+      },
+      {
+        "type": "SEPARERT",
+        "gyldigFraOgMed": "1997-09-19",
+        "gyldigTilOgMed": "1998-05-27",
+        "relatertVedSivilstand": "04056746833"
+      },
+      {
+        "type": "GIFT",
+        "gyldigFraOgMed": "1998-05-28",
+        "gyldigTilOgMed": "2006-02-22",
+        "relatertVedSivilstand": "04056746833"
+      },
+      {
+        "type": "SEPARERT",
+        "gyldigFraOgMed": "2006-02-23",
+        "gyldigTilOgMed": "2007-03-11",
+        "relatertVedSivilstand": "04056746833"
+      },
+      {
+        "type": "SKILT",
+        "gyldigFraOgMed": "2007-03-12",
+        "gyldigTilOgMed": null,
+        "relatertVedSivilstand": "04056746833"
+      }
+    ],
+    "forelderBarnRelasjon": [
+      {
+        "relatertPersonsIdent": "01014135967",
+        "relatertPersonsRolle": "FAR",
+        "minRolleForPerson": "BARN"
+      },
+      {
+        "relatertPersonsIdent": "27088632066",
+        "relatertPersonsRolle": "BARN",
+        "minRolleForPerson": "FAR"
+      },
+      {
+        "relatertPersonsIdent": "10048937182",
+        "relatertPersonsRolle": "BARN",
+        "minRolleForPerson": "FAR"
+      },
+      {
+        "relatertPersonsIdent": "22041694363",
+        "relatertPersonsRolle": "BARN",
+        "minRolleForPerson": "FAR"
+      },
+      {
+        "relatertPersonsIdent": "13111395998",
+        "relatertPersonsRolle": "BARN",
+        "minRolleForPerson": "FAR"
+      },
+      {
+        "relatertPersonsIdent": "15034542268",
+        "relatertPersonsRolle": "MOR",
+        "minRolleForPerson": "BARN"
+      },
+      {
+        "relatertPersonsIdent": "04029140648",
+        "relatertPersonsRolle": "BARN",
+        "minRolleForPerson": "FAR"
+      }
+    ],
+    "doedsfall": [],
+    "innflyttingTilNorge": [],
+    "utflyttingFraNorge": [],
+    "navn": [
+      {
+        "fornavn": "JONNY",
+        "mellomnavn": null,
+        "etternavn": "SJURSEN"
+      }
+    ]
+  },
+  "medlemskap": [
+    {
+      "dekning": "Full",
+      "fraOgMed": "2009-05-27",
+      "tilOgMed": "2009-12-31",
+      "erMedlem": true,
+      "lovvalg": "ENDL",
+      "lovvalgsland": "NOR",
+      "periodeStatus": "GYLD"
+    },
+    {
+      "dekning": "FTL_2-9_2_ld_jfr_1c",
+      "fraOgMed": "2010-05-15",
+      "tilOgMed": "2011-07-16",
+      "erMedlem": true,
+      "lovvalg": "ENDL",
+      "lovvalgsland": "NOR",
+      "periodeStatus": "GYLD"
+    },
+    {
+      "dekning": "FTL_2-9_2_ld_jfr_1c",
+      "fraOgMed": "2011-01-01",
+      "tilOgMed": "2011-12-31",
+      "erMedlem": true,
+      "lovvalg": "ENDL",
+      "lovvalgsland": "NOR",
+      "periodeStatus": "AVST"
+    },
+    {
+      "dekning": "FTL_2-9_2_ld_jfr_1c",
+      "fraOgMed": "2012-01-01",
+      "tilOgMed": "9999-12-31",
+      "erMedlem": true,
+      "lovvalg": "ENDL",
+      "lovvalgsland": "NOR",
+      "periodeStatus": "AVST"
+    }
+  ],
+  "arbeidsforhold": [
+    {
+      "periode": {
+        "fom": "2019-08-01",
+        "tom": null
+      },
+      "utenlandsopphold": null,
+      "arbeidsgivertype": "Organisasjon",
+      "arbeidsgiver": {
+        "organisasjonsnummer": "972427373",
+        "ansatte": [
+          {
+            "antall": 639,
+            "gyldighetsperiode": {
+              "fom": "2022-08-15",
+              "tom": null
+            }
+          }
+        ],
+        "konkursStatus": null,
+        "juridiskeEnheter": [
+          {
+            "organisasjonsnummer": "930694533",
+            "enhetstype": "AS",
+            "antallAnsatte": 740
+          }
+        ]
+      },
+      "arbeidsforholdstype": "NORMALT",
+      "arbeidsavtaler": [
+        {
+          "periode": {
+            "fom": "2021-10-28",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2021-10-01",
+            "tom": null
+          },
+          "yrkeskode": "2147155",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5,
+          "skipstype": null
+        },
+        {
+          "periode": {
+            "fom": "2021-10-28",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2021-01-01",
+            "tom": "2021-09-30"
+          },
+          "yrkeskode": "2147155",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5,
+          "skipstype": null
+        },
+        {
+          "periode": {
+            "fom": "2021-07-30",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2020-11-01",
+            "tom": "2020-12-31"
+          },
+          "yrkeskode": "2147155",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5,
+          "skipstype": null
+        },
+        {
+          "periode": {
+            "fom": "2021-07-30",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2019-07-01",
+            "tom": "2020-10-31"
+          },
+          "yrkeskode": "2147155",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5,
+          "skipstype": null
+        }
+      ],
+      "permisjonPermittering": null
+    }
+  ],
+  "oppgaver": [],
+  "dokument": [
+    {
+      "datoOpprettet": "2021-11-26T14:26:42",
+      "journalpostId": "520761572",
+      "journalfortAvNavn": "MHD2101",
+      "tittel": "Varsel om saksbehandlingstid",
+      "journalposttype": "U",
+      "journalstatus": "FERDIGSTILT",
+      "tema": "MED",
+      "sak": {
+        "fagsakId": "2101A01"
+      },
+      "dokumenter": [
+        {
+          "dokumentId": "544399664",
+          "tittel": "Varsel om saksbehandlingstid"
+        }
+      ]
+    },
+    {
+      "datoOpprettet": "2021-11-26T14:26:42",
+      "journalpostId": "520761489",
+      "journalfortAvNavn": "MHD2101",
+      "tittel": "Varsel om saksbehandlingstid",
+      "journalposttype": "U",
+      "journalstatus": "FERDIGSTILT",
+      "tema": "MED",
+      "sak": {
+        "fagsakId": "2101A05"
+      },
+      "dokumenter": [
+        {
+          "dokumentId": "544399729",
+          "tittel": "Varsel om saksbehandlingstid"
+        }
+      ]
+    }
+  ],
+  "ytelse": "SYKEPENGER",
+  "dataOmBarn": [
+    {
+      "personhistorikkBarn": {
+        "ident": "22041694363",
+        "bostedsadresser": [
+          {
+            "landkode": "NOR",
+            "fom": "2016-04-22",
+            "tom": null,
+            "historisk": false
+          }
+        ],
+        "kontaktadresser": [],
+        "oppholdsadresser": [],
+        "forelderBarnRelasjon": [
+          {
+            "relatertPersonsIdent": "08026644373",
+            "relatertPersonsRolle": "FAR",
+            "minRolleForPerson": "BARN"
+          },
+          {
+            "relatertPersonsIdent": "01037834498",
+            "relatertPersonsRolle": "MOR",
+            "minRolleForPerson": "BARN"
+          }
+        ]
+      }
+    },
+    {
+      "personhistorikkBarn": {
+        "ident": "13111395998",
+        "bostedsadresser": [
+          {
+            "landkode": "NOR",
+            "fom": "2013-11-13",
+            "tom": null,
+            "historisk": false
+          }
+        ],
+        "kontaktadresser": [],
+        "oppholdsadresser": [],
+        "forelderBarnRelasjon": [
+          {
+            "relatertPersonsIdent": "01037834498",
+            "relatertPersonsRolle": "MOR",
+            "minRolleForPerson": "BARN"
+          },
+          {
+            "relatertPersonsIdent": "08026644373",
+            "relatertPersonsRolle": "FAR",
+            "minRolleForPerson": "BARN"
+          }
+        ]
+      }
+    }
+  ],
+  "dataOmEktefelle": {
+    "personhistorikkEktefelle": {
+      "ident": "04056746833",
+      "statsborgerskap": [
+        {
+          "landkode": "NOR",
+          "fom": null,
+          "tom": null,
+          "historisk": false
+        }
+      ],
+      "barn": [],
+      "bostedsadresser": [
+        {
+          "landkode": "NOR",
+          "fom": "1985-08-01",
+          "tom": "1986-10-07",
+          "historisk": true
+        },
+        {
+          "landkode": "NOR",
+          "fom": "1986-10-08",
+          "tom": "1997-08-31",
+          "historisk": true
+        },
+        {
+          "landkode": "NOR",
+          "fom": "1997-09-01",
+          "tom": "1998-04-06",
+          "historisk": true
+        },
+        {
+          "landkode": "NOR",
+          "fom": "1998-04-07",
+          "tom": "2012-11-16",
+          "historisk": true
+        }
+      ],
+      "kontaktadresser": [
+        {
+          "landkode": "GRC",
+          "fom": "2012-11-16",
+          "tom": null,
+          "historisk": false
+        }
+      ],
+      "oppholdsadresser": []
+    },
+    "arbeidsforholdEktefelle": []
+  },
+  "overstyrteRegler": {},
+  "oppholdstillatelse": null,
+  "startDatoForYtelse": "2022-08-15"
+}

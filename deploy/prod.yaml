@@ -1,0 +1,101 @@
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: medlemskap-mini
+  namespace: medlemskap
+  labels:
+    team: medlemskap
+spec:
+  azure:
+    application:
+      enabled: true
+  image: {{ image }}
+  port: 7070
+  liveness:
+    path: isAlive
+    initialDelay: 30
+    timeout: 1
+    periodSeconds: 5
+    failureThreshold: 10
+  readiness:
+    path: isReady
+    initialDelay: 30
+    timeout: 1
+  resources:
+    limits:
+      cpu: 2000m
+      memory: 2048Mi
+    requests:
+      cpu: 50m
+      memory: 128Mi
+  ingresses:
+    - https://medlemskap-mini.intern.nav.no
+  envFrom:
+    - secret: medlemskap-mini
+  replicas:
+    min: 3
+    max: 4
+    cpuThresholdPercentage: 90
+  prometheus:
+    enabled: true
+    path: /metrics
+  secureLogs:
+    enabled: true
+  webproxy: true
+  accessPolicy:
+    inbound:
+      rules:
+        - application: medlemskap-barn
+        - application: medlemskap-sykepenger-listener
+        - application: medlemskap-dagpengelytter
+        - application: sparkel-medlemskap
+          namespace: tbd
+          cluster: prod-fss
+        - application: hm-brille-api
+          namespace: teamdigihot
+          cluster: prod-gcp
+    outbound:
+      rules:
+        - application: udi-proxy
+          namespace: medlemskap
+          cluster: prod-fss
+      external:
+        - host: api-gw.oera.no
+        - host: login.microsoftonline.com
+        - host: udi-proxy.prod-fss-pub.nais.io
+        - host: aareg-services.prod-fss-pub.nais.io
+        - host: ereg-services.dev.intern.nav.no
+        - host: medlemskap-medl-api.prod-fss-pub.nais.io
+        - host: oppgave.prod-fss-pub.nais.io
+  kafka:
+    pool: nav-prod
+
+  env:
+    - name: SECURITY_TOKEN_SERVICE_URL
+      value: https://api-gw.oera.no/sts/SecurityTokenServiceProvider/
+    - name: SECURITY_TOKEN_SERVICE_REST_URL
+      value: https://api-gw.oera.no/security-token-service
+    - name: MEDL2_BASE_URL
+      value: https://medlemskap-medl-api.prod-fss-pub.nais.io
+    - name: AAREG_BASE_URL
+      value: https://aareg-services.prod-fss-pub.nais.io/api
+    - name: SAF_BASE_URL
+      value: https://saf.prod-fss-pub.nais.io/graphql
+    - name: OPPGAVE_BASE_URL
+      value: https://oppgave.prod-fss-pub.nais.io
+    - name: PDL_BASE_URL
+      value: https://pdl-api.prod-fss-pub.nais.io/graphql
+    - name: EREG_BASE_URL
+      value: https://api-gw.oera.no/ereg-services/api
+    - name: UDI_BASE_URL
+      value: https://udi-proxy.prod-fss-pub.nais.io
+    - name: AZURE_SCOPE_OPPGAVE
+      value: api://prod-fss.oppgavehandtering.oppgave/.default
+    - name: AZURE_SCOPE_UDI
+      value: api://prod-fss.medlemskap.udi-proxy/.default
+    - name: AZURE_SCOPE_MEDL
+      value: api://prod-fss.team-rocket.medlemskap-medl-api/.default
+    - name: AZURE_SCOPE_PDL
+      value: api://prod-fss.pdl.pdl-api/.default
+    - name: AZURE_SCOPE_AAREG
+      value: api://prod-fss.arbeidsforhold.aareg-services-nais/.default

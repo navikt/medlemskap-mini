@@ -1,0 +1,22 @@
+{
+  "uttrekkstidspunkt": null,
+  "foresporselsfodselsnummer": "12345678910",
+  "avgjoerelse": null,
+  "gjeldendeOppholdsstatus": {
+    "oppholdstillatelsePaSammeVilkar": null,
+    "eosellerEFTAOpphold": {
+      "periode": {
+        "fom": "2019-02-04",
+        "tom": "2024-02-04"
+      },
+      "eosellerEFTAGrunnlagskategoriOppholdsrettType": "FAMILIE",
+      "eosellerEFTAGrunnlagskategoriOppholdstillatelseType": null,
+      "eosellerEFTAOppholdType": "EOS_ELLER_EFTA_BESLUTNING_OM_OPPHOLDSRETT"
+    },
+    "uavklart": null,
+    "ikkeOppholdstillatelseIkkeOppholdsPaSammeVilkarIkkeVisum": null
+  },
+  "arbeidsadgang": null,
+  "uavklartFlyktningstatus": null,
+  "harFlyktningstatus": null
+}

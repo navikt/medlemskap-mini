@@ -1,0 +1,114 @@
+{
+  "periode" : {
+    "fom" : "2020-01-30",
+    "tom" : "2021-01-30"
+  },
+  "brukerinput" : {
+    "arbeidUtenforNorge" : false
+  },
+  "pdlpersonhistorikk" : {
+    "statsborgerskap" : [ {
+      "landkode" : "BEL",
+      "fom" : "2000-01-01",
+      "tom" : null
+    } ],
+    "personstatuser" : [ {
+      "personstatus" : "bosatt",
+      "fom" : "2000-01-01",
+      "tom" : null
+    } ],
+    "bostedsadresser" : [ {
+      "landkode" : "NOR",
+      "fom" : "2000-01-01",
+      "tom" : null
+    } ],
+    "kontaktadresser" : [ ],
+    "oppholdsadresser" : [ ],
+    "sivilstand" : [ {
+      "type" : "GIFT",
+      "gyldigFraOgMed" : "2015-06-29",
+      "gyldigTilOgMed" : null,
+      "relatertVedSivilstand" : "10108000398",
+      "folkeregistermetadata" : null
+    } ],
+    "forelderBarnRelasjon" : [ {
+      "relatertPersonsIdent" : "09069534888",
+      "relatertPersonsRolle" : "BARN",
+      "minRolleForPerson" : "FAR",
+      "folkeregistermetadata" : null
+    }, {
+      "relatertPersonsIdent" : "10079541651",
+      "relatertPersonsRolle" : "BARN",
+      "minRolleForPerson" : "FAR",
+      "folkeregistermetadata" : null
+    } ]
+  },
+  "medlemskap" : [ ],
+  "arbeidsforhold" : [ {
+    "periode" : {
+      "fom" : "2018-01-01",
+      "tom" : null
+    },
+    "utenlandsopphold" : [ ],
+    "arbeidsgivertype" : "Organisasjon",
+    "arbeidsgiver" : {
+      "type" : "BEDR",
+      "identifikator" : "1",
+      "ansatte" : [ {
+        "antall" : 9,
+        "bruksperiode" : null,
+        "gyldighetsperiode" : null
+      } ],
+      "konkursStatus" : null,
+      "juridiskEnhetEnhetstypeMap" : null
+    },
+    "arbeidsforholdstype" : "NORMALT",
+    "arbeidsavtaler" : [ {
+      "periode" : {
+        "fom" : "2018-01-01",
+        "tom" : null
+      },
+      "yrkeskode" : "001",
+      "skipsregister" : null,
+      "stillingsprosent" : 80.0
+    } ]
+  } ],
+  "oppgaver" : [ ],
+  "dokument" : [ ],
+  "ytelse" : "SYKEPENGER",
+  "dataOmBarn" : [ {
+    "personhistorikkBarn" : {
+      "ident" : "10079541651",
+      "bostedsadresser" : [ ],
+      "kontaktadresser" : [ ],
+      "oppholdsadresser" : [ ],
+      "familierelasjoner" : [ ]
+    }
+  }, {
+    "personhistorikkBarn" : {
+      "ident" : "09069534888",
+      "bostedsadresser" : [ {
+        "landkode" : "NOR",
+        "fom" : "2010-07-18",
+        "tom" : null
+      } ],
+      "kontaktadresser" : [ ],
+      "oppholdsadresser" : [ ],
+      "familierelasjoner" : [ ]
+    }
+  } ],
+  "dataOmEktefelle" : {
+    "personhistorikkEktefelle" : {
+      "ident" : "10108000398",
+      "barn" : [ ],
+      "bostedsadresser" : [ {
+        "landkode" : "NOR",
+        "fom" : "2010-07-18",
+        "tom" : null
+      } ],
+      "kontaktadresser" : [ ],
+      "oppholdsadresser" : [ ]
+    },
+    "arbeidsforholdEktefelle" : [ ]
+  }
+}

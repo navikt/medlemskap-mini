@@ -1,0 +1,917 @@
+openapi: "3.0.3"
+info:
+  version: 1.0.0
+  title: Lovvalg og medlemskap
+servers:
+  - url: https://medlemskap-mini.nais.preprod.local
+    description: preproduksjon
+  - url: https://medlemskap-mini.nais.adeo.no
+    description: produksjon
+paths:
+  /:
+    post:
+      summary: Avgjøre om lovvalg er norsk, og om bruker er medlem av folketrygden
+      operationId: avgjørLovvalgOgMedlemskap
+      security:
+        - bearerAuth: []
+      tags:
+        - Lovvalg
+        - Medlemskap
+      description: Avgjøre om lovvalg er norsk, og om bruker er medlem av folketrygden
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Request"
+      responses:
+        200:
+          description: Forventet response på en gyldig request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Response"
+        400:
+          description: Ugyldig request eller annen feil
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /regler:
+    post:
+      summary: Avgjør om bruker er medlem av folketrygden, gitt et datagrunnlag
+      operationId: avgjørMedlemskapFraDatagrunnlag
+      security:
+        - bearerAuth: [ ]
+      tags:
+        - Lovvalg
+        - Medlemskap
+      description: Avgjøre om lovvalg er norsk, og om bruker er medlem av folketrygden
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Datagrunnlag"
+      responses:
+        200:
+          description: Forventet response på en gyldig request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Resultat"
+        400:
+          description: Ugyldig request eller annen feil
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  securitySchemes:
+    bearerAuth:
+      type: "http"
+      scheme: "bearer"
+      bearerFormat: "JWT"
+      description: "AzureAd token. Dersom det logges inn med en ytelse som ikke har fått tilgang, enten ta kontakt med #team-p3-fellesfunksjoner eller definer gyldig ytelse i request"
+  schemas:
+    Adresse:
+      properties:
+        landkode:
+          $ref: "#/components/schemas/Landkode"
+        fom:
+          $ref: "#/components/schemas/ValgfriDato"
+        tom:
+          $ref: "#/components/schemas/ValgfriDato"
+        historisk:
+          type: boolean
+    Ansatte:
+      properties:
+        antall:
+          type: integer
+          nullable: true
+        bruksperiode:
+          $ref: "#/components/schemas/Bruksperiode"
+        gyldighetsperiode:
+          $ref: "#/components/schemas/Gyldighetsperiode"
+    Arbeidsavtale:
+      properties:
+        periode:
+          $ref: "#/components/schemas/Periode"
+        gyldighetsperiode:
+          $ref: "#/components/schemas/Periode"
+        yrkeskode:
+          type: string
+        skipsregister:
+          type: string
+          nullable: true
+        skipstype:
+          type: string
+          nullable: true
+        fartsomraade:
+          type: string
+          nullable: true
+        stillingsprosent:
+          type: number
+          multipleOf: 0.01
+          nullable: true
+        beregnetAntallTimerPrUke:
+          type: number
+          multipleOf: 0.01
+          nullable: true
+    Arbeidsforhold:
+      properties:
+        periode:
+          $ref: "#/components/schemas/Periode"
+        utenlandsopphold:
+          type: array
+          items:
+            $ref: "#/components/schemas/Utenlandsopphold"
+        arbeidsgivertype:
+          type: string
+          enum:
+            - Organisasjon
+            - Person
+        arbeidsgiver:
+          $ref: "#/components/schemas/Arbeidsgiver"
+        arbeidsforholdstype:
+          type: string
+          enum:
+            - FRILANSER
+            - MARITIMT
+            - NORMALT
+            - FORENKLET
+            - ANDRE
+        arbeidsavtaler:
+          type: array
+          items:
+            $ref: "#/components/schemas/Arbeidsavtale"
+        permisjonPermittering:
+          type: array
+          items:
+            $ref: "#/components/schemas/PermisjonPermittering"
+    Arbeidsgiver:
+      properties:
+        navn:
+          type: string
+          nullable: true
+        organisasjonsnummer:
+          type: string
+          nullable: true
+        ansatte:
+          type: array
+          items:
+            $ref: "#/components/schemas/Ansatte"
+          nullable: true
+        konkursStatus:
+          type: array
+          items:
+            type: string
+          nullable: true
+        juridiskeEnheter:
+          type: array
+          items:
+            $ref: "#/components/schemas/JuridiskEnhet"
+          nullable: true
+    BrukerInput:
+      properties:
+        arbeidUtenforNorge:
+          type: boolean
+        oppholdUtenforEos:
+          type: object
+          nullable: true
+        oppholdUtenforNorge:
+          type: object
+          nullable: true
+        oppholdstilatelse:
+          type: object
+          nullable: true
+        utfortAarbeidUtenforNorge:
+          type: object
+          nullable: true
+    Bruksperiode:
+      properties:
+        fom:
+          $ref: "#/components/schemas/ValgfriDato"
+        tom:
+          $ref: "#/components/schemas/ValgfriDato"
+      nullable: true
+    Code:
+      properties:
+        value:
+          type: integer
+        description:
+          type: string
+    Datagrunnlag:
+      properties:
+        fnr:
+          type: string
+        periode:
+          $ref: "#/components/schemas/InputPeriode"
+        førsteDagForYtelse:
+          $ref: "#/components/schemas/FoersteDagForYtelse"
+        startDatoForYtelse:
+          $ref: "#/components/schemas/StartdatoForYtelse"
+        brukerinput:
+          $ref: "#/components/schemas/BrukerInput"
+        pdlpersonhistorikk:
+          $ref: "#/components/schemas/Personhistorikk"
+        medlemskap:
+          type: array
+          items:
+            $ref: "#/components/schemas/Medlemskap"
+        arbeidsforhold:
+          type: array
+          items:
+            $ref: "#/components/schemas/Arbeidsforhold"
+        oppgaver:
+          type: array
+          items:
+            $ref: "#/components/schemas/Oppgave"
+        dokument:
+          type: array
+          items:
+            $ref: "#/components/schemas/Journalpost"
+        ytelse:
+          $ref: "#/components/schemas/Ytelse"
+        dataOmBarn:
+          type: array
+          items:
+            $ref: "#/components/schemas/DataOmBarn"
+          nullable: true
+        dataOmEktefelle:
+          $ref: "#/components/schemas/DataOmEktefelle"
+        overstyrteRegler:
+          $ref: "#/components/schemas/OverstyrteRegler"
+        oppholdstillatelse:
+          $ref: "#/components/schemas/Oppholdstillatelse"
+    DataOmBarn:
+      properties:
+        personhistorikkBarn:
+          $ref: "#/components/schemas/PersonhistorikkBarn"
+    DataOmEktefelle:
+      properties:
+        personhistorikkEktefelle:
+          $ref: "#/components/schemas/PersonhistorikkEktefelle"
+        arbeidsforholdEktefelle:
+          type: array
+          items:
+            $ref: "#/components/schemas/Arbeidsforhold"
+      nullable: true
+    Delresultat:
+      type: array
+      items:
+        $ref: "#/components/schemas/Resultat"
+    Dato:
+      type: string
+      format: date
+      description: Dato
+      nullable: true
+      example: "2021-01-30"
+    Dokument:
+      properties:
+        dokumentId:
+          type: string
+        tittel:
+          type: string
+          nullable: true
+    RelevantDato:
+      properties:
+        dato:
+          type: string
+        datotype:
+              enum:
+                - DATO_OPPRETTET
+                - DATO_SENDT_PRINT
+                - DATO_EKSPEDERT
+                - DATO_JOURNALFOERT
+                - DATO_REGISTRERT
+                - DATO_AVS_RETUR
+                - DATO_DOKUMENT
+                - __UNKNOWN_VALUE
+    Sak:
+      properties:
+        fagsakId:
+          type: string
+          nullable: true
+    Doedsfall:
+      type: array
+      items:
+        $ref: "#/components/schemas/ValgfriDato"
+    Error:
+      required:
+        - url
+        - message
+      properties:
+        url:
+          type: string
+        message:
+          type: string
+        cause:
+          type: string
+        code:
+          $ref: "#/components/schemas/Code"
+    Familierelasjon:
+      properties:
+        relatertPersonsIdent:
+          type: string
+        relatertPersonsRolle:
+          type: string
+        minRolleForPerson:
+          type: string
+          nullable: true
+        folkeregistermetadata:
+          $ref: "#/components/schemas/Folkeregistermetadata"
+    Folkeregistermetadata:
+      properties:
+        ajourholdstidspunkt:
+          $ref: "#/components/schemas/ValgfriDatoTid"
+        gyldighetstidspunkt:
+          $ref: "#/components/schemas/ValgfriDatoTid"
+        opphoerstidspunkt:
+          $ref: "#/components/schemas/ValgfriDatoTid"
+      nullable: true
+    Metadata:
+      properties:
+        historisk:
+          type: boolean
+    FolkeregisterPersonstatus:
+      properties:
+        personstatus:
+          type: string
+        fom:
+          $ref: "#/components/schemas/ValgfriDato"
+        tom:
+          $ref: "#/components/schemas/ValgfriDato"
+    FoersteDagForYtelse:
+      type: string
+      format: date
+      description: Første dag for ytelse, for sykepenger er det første dag for sykepenger
+      nullable: true
+      example: "2021-01-30"
+    Gyldighetsperiode:
+      properties:
+        fom:
+          $ref: "#/components/schemas/ValgfriDato"
+        tom:
+          $ref: "#/components/schemas/ValgfriDato"
+      nullable: true
+    InputPeriode:
+      properties:
+        fom:
+          $ref: "#/components/schemas/ValgfriDato"
+        tom:
+          $ref: "#/components/schemas/ValgfriDato"
+      description: Perioden ytelsen gjelder, for sykepenger er det for eksempel sykemeldingsperioden
+    Journalpost:
+      properties:
+        datoOpprettet:
+          type: string
+        relevanteDatoer:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/RelevantDato"
+          nullable: true
+        journalpostId:
+          type: string
+        journalfortAvNavn:
+          type: string
+          nullable: true
+        tittel:
+          type: string
+          nullable: true
+        journalposttype:
+          type: string
+          nullable: true
+        journalstatus:
+          type: string
+          nullable: true
+        tema:
+          type: string
+          nullable: true
+        sak:
+          type: object
+          nullable: true
+          additionalProperties:
+            $ref: "#/components/schemas/Sak"
+        dokumenter:
+          type: array
+          items:
+            $ref: "#/components/schemas/Dokument"
+          nullable: true
+    Oppholdstillatelse:
+      properties:
+        uttrekkstidspunkt:
+            $ref: "#/components/schemas/ValgfriDato"
+        foresporselsfodselsnummer:
+          type: string
+        avgjoerelse:
+          type: boolean
+          nullable: true
+        gjeldendeOppholdsstatus:
+          $ref: "#/components/schemas/GjeldendeOppholdsstatus"
+        arbeidsadgang:
+          $ref: "#/components/schemas/Arbeidsadgang"
+        uavklartFlyktningstatus:
+          type: boolean
+          nullable: true
+        harFlyktningstatus:
+          type: boolean
+          nullable: true
+        udiFeilKode:
+          type: integer
+          nullable: true
+      nullable: true
+    GjeldendeOppholdsstatus:
+      properties:
+        oppholdstillatelsePaSammeVilkar:
+          $ref: "#/components/schemas/OppholdstillatelsePaSammeVilkar"
+        eosellerEFTAOpphold:
+          $ref: "#/components/schemas/EOSellerEFTAOpphold"
+          nullable: true
+        uavklart:
+          $ref: "#/components/schemas/Uavklart"
+          nullable: true
+        ikkeOppholdstillatelseIkkeOppholdsPaSammeVilkarIkkeVisum:
+          $ref: "#/components/schemas/IkkeOppholdstillatelseIkkeOppholdsPaSammeVilkarIkkeVisum"
+      nullable: true
+    Uavklart:
+      type: string
+      nullable: true
+
+    IkkeOppholdstillatelseIkkeOppholdsPaSammeVilkarIkkeVisum:
+      properties:
+        utvistMedInnreiseForbud:
+          $ref: "#/components/schemas/UtvistMedInnreiseForbud"
+        avslagEllerBortfallAvPOBOSellerTilbakekallEllerFormeltVedtak:
+          $ref: "#/components/schemas/AvslagEllerBortfallAvPOBOSellerTilbakekallEllerFormeltVedtak"
+        ovrigIkkeOpphold:
+          $ref: "#/components/schemas/OvrigIkkeOpphold"
+      nullable: true
+    OvrigIkkeOpphold:
+      properties:
+        type:
+          enum:
+            - OPPHEVET_INNREISEFORBUD
+            - ANNULERING_AV_VISUM
+            - UTLOPT_OPPHOLDSTILLATELSE
+            - UTLOPT_EO_SELLER_EFTA_OPPHOLDSRETT_ELLER_EO_SELLER_EFTA_OPPHOLDSTILLATELSE
+    AvslagEllerBortfallAvPOBOSellerTilbakekallEllerFormeltVedtak:
+      properties:
+        avgjoerselsesDato:
+          $ref: "#/components/schemas/Dato"
+    UtvistMedInnreiseForbud:
+      properties:
+        type:
+          enum:
+            - JA
+            - NEI
+            - UAVKLART
+    EOSellerEFTAOpphold:
+      nullable: true
+      properties:
+        periode:
+          $ref: "#/components/schemas/Periode"
+        type:
+          enum:
+            - EOS_ELLER_EFTA_BESLUTNING_OM_OPPHOLDSRETT
+            - EOS_ELLER_EFTA_VEDTAK_OM_VARIG_OPPHOLDSRETT
+            - EOS_ELLER_EFTA_OPPHOLDSTILLATELSE
+    OppholdstillatelsePaSammeVilkar:
+      properties:
+        periode:
+          $ref: "#/components/schemas/Periode"
+        harTillatelse:
+          type: boolean
+        soknadIkkeAvgjort:
+          type: boolean
+        type:
+          enum:
+            - MIDLERTIDIG
+            - PERMANENT
+    Arbeidsadgang:
+      properties:
+        periode:
+          $ref: "#/components/schemas/Periode"
+        harArbeidsadgang:
+          type: boolean
+        arbeidsadgangType:
+          enum:
+            - BESTEMT_ARBEIDSGIVER_ELLER_OPPDRAGSGIVER
+            - BESTEMT_ARBEID_ELLER_OPPDRAG
+            - BESTEMT_ARBEIDSGIVER_OG_ARBEID_ELLER_BESTEMT_OPPDRAGSGIVER_OG_OPPDRAG
+            - GENERELL
+            - UAVKLART
+        arbeidsomfang:
+          enum:
+            - INGEN_KRAV_TIL_STILLINGSPROSENT
+            - KUN_ARBEID_HELTID
+            - KUN_ARBEID_DELTID
+            - DELTID_SAMT_FERIER_HELTID
+            - UAVKLART
+    JuridiskEnhet:
+      properties:
+        organisasjonsnummer:
+          type: string
+          nullable: true
+        enhetstype:
+          type: string
+          nullable: true
+        antallAnsatte:
+          type: integer
+          nullable: true
+    Landkode:
+      type: string
+      minLength: 2
+      maxLength: 3
+      description: Landkode med to eller tre tegn
+      example: NOR
+    Medlemskap:
+      properties:
+        dekning:
+          type: string
+          nullable: true
+        fraOgMed:
+          $ref: "#/components/schemas/Dato"
+        tilOgMed:
+          $ref: "#/components/schemas/Dato"
+        erMedlem:
+          type: boolean
+        lovvalg:
+          type: string
+          nullable: true
+        lovvalgsland:
+          type: string
+          nullable: true
+        periodeStatus:
+          type: string
+          nullable: true
+        grunnlag:
+          type: string
+          nullable: true
+    Oppgave:
+      properties:
+        aktivDato:
+          $ref: "#/components/schemas/Dato"
+        prioritet:
+          type: string
+          enum:
+            - HOY
+            - NORM
+            - LAV
+        status:
+          type: string
+          enum:
+            - OPPRETTET
+            - AAPNET
+            - UNDER_BEHANDLING
+            - FERDIGSTILT
+            - FEILREGISTRERT
+        tema:
+          type: string
+          nullable: true
+    OverstyrteRegler:
+      type: object
+      additionalProperties:
+        $ref: "#/components/schemas/OverstyrtRegel"
+    OverstyrtRegel:
+      type: string
+    Periode:
+      properties:
+        fom:
+          $ref: "#/components/schemas/ValgfriDato"
+        tom:
+          $ref: "#/components/schemas/ValgfriDato"
+    SoknadIkkeAvgjort:
+      properties:
+        soknadIkkeAvgjort:
+          type: boolean
+    PermisjonPermittering:
+      properties:
+        periode:
+          $ref: "#/components/schemas/Periode"
+        permisjonPermitteringId:
+          type: string
+        prosent:
+          type: number
+        type:
+          type: string
+          enum:
+            - PERMISJON
+            - PERMISJON_MED_FORELDREPENGER
+            - PERMISJON_VED_MILITAERTJENESTE
+            - PERMITTERING
+            - UTDANNINGSPERMISJON
+            - VELFERDSPERMISJON
+            - ANDRE_IKKE_LOVFESTEDE_PERMISJONER
+            - ANDRE_LOVFESTEDE_PERMISJONER
+            - UTDANNINGSPERMISJON_IKKE_LOVFESTET
+            - UTDANNINGSPERMISJON_LOVFESTET
+            - ANNET
+        varslingskode:
+          type: string
+    Personhistorikk:
+      properties:
+        statsborgerskap:
+          type: array
+          items:
+            $ref: "#/components/schemas/Statsborgerskap"
+        personstatuser:
+          type: array
+          items:
+            $ref: "#/components/schemas/FolkeregisterPersonstatus"
+        bostedsadresser:
+          type: array
+          items:
+            $ref: "#/components/schemas/Adresse"
+        kontaktadresser:
+          type: array
+          items:
+            $ref: "#/components/schemas/Adresse"
+        oppholdsadresser:
+          type: array
+          items:
+            $ref: "#/components/schemas/Adresse"
+        sivilstand:
+          type: array
+          items:
+            $ref: "#/components/schemas/Sivilstand"
+        forelderBarnRelasjon:
+          type: array
+          items:
+            $ref: "#/components/schemas/ForelderBarnRelasjon"
+        doedsfall:
+          type: array
+          items:
+            $ref: "#/components/schemas/ValgfriDato"
+        innflyttingTilNorge:
+          type: array
+          items:
+            $ref: "#/components/schemas/innflyttingTilNorge"
+        utflyttingFraNorge:
+          type: array
+          items:
+            $ref: "#/components/schemas/utflyttingFraNorge"
+        navn:
+          type: array
+          items:
+            $ref: "#/components/schemas/Navn"
+        oppholdstilatelser:
+          type: array
+          items:
+            nullable: true
+    PersonhistorikkBarn:
+      properties:
+        ident:
+          type: string
+        bostedsadresser:
+          type: array
+          items:
+            $ref: "#/components/schemas/Adresse"
+        kontaktadresser:
+          type: array
+          items:
+            $ref: "#/components/schemas/Adresse"
+        oppholdsadresser:
+          type: array
+          items:
+            $ref: "#/components/schemas/Adresse"
+        forelderBarnRelasjon:
+          type: array
+          items:
+            $ref: "#/components/schemas/ForelderBarnRelasjon"
+    PersonhistorikkEktefelle:
+      properties:
+        ident:
+          type: string
+        statsborgerskap:
+          type: array
+          items:
+            $ref: "#/components/schemas/Statsborgerskap"
+        barn:
+          type: array
+          nullable: true
+          items:
+            type: string
+        bostedsadresser:
+          type: array
+          items:
+            $ref: "#/components/schemas/Adresse"
+        kontaktadresser:
+          type: array
+          items:
+            $ref: "#/components/schemas/Adresse"
+        oppholdsadresser:
+          type: array
+          items:
+            $ref: "#/components/schemas/Adresse"
+    ForelderBarnRelasjon:
+      properties:
+        relatertPersonsIdent:
+          type: string
+        relatertPersonsRolle:
+          items:
+            $ref: "#/components/schemas/relatertPersonsRolle"
+        minRolleForPerson:
+          items:
+            $ref: "#/components/schemas/relatertPersonsRolle"
+          nullable: true
+    relatertPersonsRolle:
+      type: string
+      enum:
+        - BARN
+        - MOR
+        - FAR
+        - MEDMOR
+    RegelId:
+      type: string
+      description: Identifiserer en regel.
+      example: "REGEL_1_1"
+    Request:
+      required:
+        - fnr
+        - periode
+        - brukerinput
+      properties:
+        fnr:
+          type: string
+        periode:
+          $ref: "#/components/schemas/InputPeriode"
+        førsteDagForYtelse:
+          $ref: "#/components/schemas/FoersteDagForYtelse"
+        brukerinput:
+          $ref: "#/components/schemas/BrukerInput"
+        ytelse:
+          $ref: "#/components/schemas/Ytelse"
+        overstyrteRegler:
+          $ref: "#/components/schemas/OverstyrteRegler"
+
+    Response:
+      required:
+        - datagrunnlag
+        - resultat
+      properties:
+        datagrunnlag:
+          $ref: "#/components/schemas/Datagrunnlag"
+        resultat:
+          $ref: "#/components/schemas/Resultat"
+        vurderingsID:
+          type: string
+        versjonRegler:
+          type: string
+        tidspunkt:
+          type: string
+        versjonTjeneste:
+          type: string
+        kanal:
+          type: string
+    Resultat:
+      required:
+        - regelId
+        - avklaring
+        - begrunnelse
+        - svar
+      properties:
+        regelId:
+          $ref: "#/components/schemas/RegelId"
+        avklaring:
+          type: string
+          description: Spørsmål som regelen avklarer
+        begrunnelse:
+          type: string
+          description: Begrunnelse for avklaringen
+        svar:
+          $ref: "#/components/schemas/Svar"
+        harDekning:
+          type: string
+          nullable: true
+          description: Har den angitte ytelsen dekning?
+        dekning:
+          type: string
+          description: Angir hva slags dekning brukeren har ifølge Folketrygdloven
+          example: FTL_2-6
+        delresultat:
+          type: array
+          items:
+            $ref: "#/components/schemas/Resultat"
+        årsaker:
+          type: array
+          items:
+            $ref: "#/components/schemas/Aarsak"
+    Sivilstand:
+      properties:
+        type:
+          type: string
+        gyldigFraOgMed:
+          $ref: "#/components/schemas/ValgfriDato"
+        gyldigTilOgMed:
+          $ref: "#/components/schemas/ValgfriDato"
+        relatertVedSivilstand:
+          type: string
+          nullable: true
+        folkeregistermetadata:
+          $ref: "#/components/schemas/Folkeregistermetadata"
+    StartdatoForYtelse:
+      type: string
+      format: date
+      description: Start dato for ytelse, for sykepenger er det første dag for sykepenger
+      nullable: true
+      example: "2021-01-30"
+    Statsborgerskap:
+        properties:
+          landkode:
+            $ref: "#/components/schemas/Landkode"
+          fom:
+            $ref: "#/components/schemas/ValgfriDato"
+          tom:
+            $ref: "#/components/schemas/ValgfriDato"
+          historisk:
+            type: boolean
+    innflyttingTilNorge:
+      properties:
+        fraflyttingsland:
+          type: string
+          nullable: true
+        fraflyttingsstedIUtlandet:
+          type: string
+          nullable: true
+        folkeregistermetadata:
+          $ref: "#/components/schemas/Folkeregistermetadata"
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+    utflyttingFraNorge:
+      properties:
+        tilflyttingsland:
+          type: string
+        tilflyttingsstedIUtlandet:
+          type: string
+        utflyttingsdato:
+          $ref: "#/components/schemas/Dato"
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+    Navn:
+      properties:
+        fornavn:
+          type: string
+        mellomnavn:
+          type: string
+          nullable: true
+        etternavn:
+          type: string
+    Svar:
+      type: string
+      enum:
+        - JA
+        - NEI
+        - UAVKLART
+    Utenlandsopphold:
+      properties:
+        landkode:
+          $ref: "#/components/schemas/Landkode"
+        periode:
+          $ref: "#/components/schemas/ValgfriPeriode"
+        rapporteringsperiode:
+          type: string
+          example: 2015-02
+      nullable: true
+    ValgfriDato:
+      type: string
+      format: date
+      description: Dato
+      nullable: true
+      example: "2021-01-30"
+    ValgfriDatoTid:
+      type: string
+      description: Dato tid
+      nullable: true
+      example: "2021-01-30T17:32:28"
+    ValgfriPeriode:
+      properties:
+        fom:
+          $ref: "#/components/schemas/ValgfriDato"
+        tom:
+          $ref: "#/components/schemas/ValgfriDato"
+      nullable: true
+    Ytelse:
+      type: string
+      example: SYKEPENGER, DAGPENGER, ENSLIG_FORSORGER
+    Aarsak:
+      properties:
+        regelId:
+          $ref: "#/components/schemas/RegelId"
+        avklaring:
+          type: string
+        begrunnelse:
+          type: string
+        svar:
+          $ref: "#/components/schemas/Svar"

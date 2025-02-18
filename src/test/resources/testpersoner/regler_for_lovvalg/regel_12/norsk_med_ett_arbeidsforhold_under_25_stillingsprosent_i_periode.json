@@ -1,0 +1,912 @@
+{
+  "fnr": "",
+  "periode": {
+    "fom": "2021-01-25",
+    "tom": "2021-02-12"
+  },
+  "førsteDagForYtelse": null,
+  "brukerinput": {
+    "arbeidUtenforNorge": false
+  },
+  "pdlpersonhistorikk": {
+    "statsborgerskap": [
+      {
+        "landkode": "NOR",
+        "fom": null,
+        "tom": null,
+        "historisk": false
+      }
+    ],
+    "bostedsadresser": [
+      {
+        "landkode": "NOR",
+        "fom": "1980-11-26",
+        "tom": "1999-04-05",
+        "historisk": true
+      },
+      {
+        "landkode": "NOR",
+        "fom": "1999-04-06",
+        "tom": null,
+        "historisk": false
+      }
+    ],
+    "kontaktadresser": [],
+    "oppholdsadresser": [],
+    "sivilstand": [],
+    "forelderBarnRelasjon": [
+      {
+        "relatertPersonsIdent": "07014440415",
+        "relatertPersonsRolle": "MOR",
+        "minRolleForPerson": "BARN"
+      },
+      {
+        "relatertPersonsIdent": "27059940029",
+        "relatertPersonsRolle": "BARN",
+        "minRolleForPerson": "FAR"
+      },
+      {
+        "relatertPersonsIdent": "05074348590",
+        "relatertPersonsRolle": "FAR",
+        "minRolleForPerson": "BARN"
+      }
+    ],
+    "innflyttingTilNorge": [],
+    "utflyttingFraNorge": [],
+    "navn": [],
+    "doedsfall": []
+  },
+  "medlemskap": [
+    {
+      "dekning": "Full",
+      "fraOgMed": "2018-10-28",
+      "tilOgMed": "2018-12-01",
+      "erMedlem": true,
+      "lovvalg": "ENDL",
+      "lovvalgsland": "NOR",
+      "periodeStatus": "GYLD"
+    }
+  ],
+  "arbeidsforhold": [
+    {
+      "periode": {
+        "fom": "2010-10-18",
+        "tom": null
+      },
+      "utenlandsopphold": null,
+      "arbeidsgivertype": "Organisasjon",
+      "arbeidsgiver": {
+        "organisasjonsnummer": "989075810",
+        "ansatte": [
+          {
+            "antall": 598,
+            "gyldighetsperiode": {
+              "fom": "2021-02-15",
+              "tom": null
+            }
+          }
+        ],
+        "konkursStatus": null,
+        "juridiskeEnheter": [
+          {
+            "organisasjonsnummer": "988996564",
+            "enhetstype": "AS",
+            "antallAnsatte": 1090
+          }
+        ]
+      },
+      "arbeidsforholdstype": "NORMALT",
+      "arbeidsavtaler": [
+        {
+          "periode": {
+            "fom": "2021-01-27",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2021-01-01",
+            "tom": null
+          },
+          "yrkeskode": "7237101",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5
+        },
+        {
+          "periode": {
+            "fom": "2021-01-27",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2020-07-01",
+            "tom": "2020-12-31"
+          },
+          "yrkeskode": "7237101",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5
+        },
+        {
+          "periode": {
+            "fom": "2020-11-26",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2020-04-01",
+            "tom": "2020-06-30"
+          },
+          "yrkeskode": "7237101",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5
+        },
+        {
+          "periode": {
+            "fom": "2020-11-26",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2019-07-01",
+            "tom": "2020-03-31"
+          },
+          "yrkeskode": "7237101",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5
+        },
+        {
+          "periode": {
+            "fom": "2019-07-25",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2019-04-01",
+            "tom": "2019-06-30"
+          },
+          "yrkeskode": "7237101",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5
+        },
+        {
+          "periode": {
+            "fom": "2019-07-23",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2018-06-01",
+            "tom": "2019-03-31"
+          },
+          "yrkeskode": "7237101",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5
+        },
+        {
+          "periode": {
+            "fom": "2018-08-24",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2018-04-01",
+            "tom": "2018-05-31"
+          },
+          "yrkeskode": "7237101",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5
+        },
+        {
+          "periode": {
+            "fom": "2018-08-24",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2018-01-01",
+            "tom": "2018-03-31"
+          },
+          "yrkeskode": "7237101",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5
+        },
+        {
+          "periode": {
+            "fom": "2018-01-19",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2017-06-01",
+            "tom": "2017-12-31"
+          },
+          "yrkeskode": "7237101",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5
+        },
+        {
+          "periode": {
+            "fom": "2017-09-15",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2017-04-01",
+            "tom": "2017-05-31"
+          },
+          "yrkeskode": "7237101",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5
+        },
+        {
+          "periode": {
+            "fom": "2017-09-15",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2016-06-01",
+            "tom": "2017-03-31"
+          },
+          "yrkeskode": "7237101",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5
+        },
+        {
+          "periode": {
+            "fom": "2017-09-15",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2016-04-01",
+            "tom": "2016-05-31"
+          },
+          "yrkeskode": "7237101",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5
+        },
+        {
+          "periode": {
+            "fom": "2017-09-15",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2015-10-01",
+            "tom": "2016-03-31"
+          },
+          "yrkeskode": "7237101",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5
+        },
+        {
+          "periode": {
+            "fom": "2017-09-15",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2015-06-01",
+            "tom": "2015-09-30"
+          },
+          "yrkeskode": "7237101",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5
+        },
+        {
+          "periode": {
+            "fom": "2017-09-15",
+            "tom": null
+          },
+          "gyldighetsperiode": {
+            "fom": "2015-01-01",
+            "tom": "2015-05-31"
+          },
+          "yrkeskode": "7237101",
+          "skipsregister": null,
+          "fartsomraade": null,
+          "stillingsprosent": 100.0,
+          "beregnetAntallTimerPrUke": 37.5
+        }
+      ],
+      "permisjonPermittering": [
+        {
+          "periode": {
+            "fom": "2020-06-23",
+            "tom": "2020-06-23"
+          },
+          "permisjonPermitteringId": "0302-20200623",
+          "prosent": 26.67,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2016-04-20",
+            "tom": "2016-04-20"
+          },
+          "permisjonPermitteringId": "0305-20160420",
+          "prosent": 46.67,
+          "type": "PERMITTERING",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2017-11-16",
+            "tom": "2017-11-16"
+          },
+          "permisjonPermitteringId": "0201-20171116",
+          "prosent": 73.33,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2017-11-02",
+            "tom": "2017-11-02"
+          },
+          "permisjonPermitteringId": "0302-20171102",
+          "prosent": 20.0,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2017-09-18",
+            "tom": "2017-09-18"
+          },
+          "permisjonPermitteringId": "0302-20170918",
+          "prosent": 46.67,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2015-01-19",
+            "tom": "2015-01-19"
+          },
+          "permisjonPermitteringId": "0200-20150119",
+          "prosent": 100.0,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2015-01-13",
+            "tom": "2015-01-13"
+          },
+          "permisjonPermitteringId": "0200-20150113",
+          "prosent": 100.0,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2015-04-29",
+            "tom": "2015-04-29"
+          },
+          "permisjonPermitteringId": "0200-20150429",
+          "prosent": 100.0,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2015-11-03",
+            "tom": "2015-11-03"
+          },
+          "permisjonPermitteringId": "0200-20151103",
+          "prosent": 100.0,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2016-08-10",
+            "tom": "2016-08-10"
+          },
+          "permisjonPermitteringId": "0302-20160810",
+          "prosent": 46.67,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2016-08-18",
+            "tom": "2016-08-18"
+          },
+          "permisjonPermitteringId": "0302-20160818",
+          "prosent": 53.33,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2016-10-10",
+            "tom": "2016-10-10"
+          },
+          "permisjonPermitteringId": "0302-20161010",
+          "prosent": 46.67,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2016-10-31",
+            "tom": "2016-10-31"
+          },
+          "permisjonPermitteringId": "0302-20161031",
+          "prosent": 20.0,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2016-11-24",
+            "tom": "2016-11-24"
+          },
+          "permisjonPermitteringId": "0302-20161124",
+          "prosent": 20.0,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2016-11-03",
+            "tom": "2016-11-04"
+          },
+          "permisjonPermitteringId": "0302-20161103",
+          "prosent": 30.0,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2017-02-16",
+            "tom": "2017-02-16"
+          },
+          "permisjonPermitteringId": "0302-20170216",
+          "prosent": 26.67,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2017-05-24",
+            "tom": "2017-05-24"
+          },
+          "permisjonPermitteringId": "0302-20170524",
+          "prosent": 13.33,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2017-06-20",
+            "tom": "2017-06-20"
+          },
+          "permisjonPermitteringId": "0302-20170620",
+          "prosent": 46.67,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2017-07-06",
+            "tom": "2017-07-06"
+          },
+          "permisjonPermitteringId": "0302-20170706",
+          "prosent": 46.67,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2019-12-02",
+            "tom": "2019-12-02"
+          },
+          "permisjonPermitteringId": "0302-20191202",
+          "prosent": 13.33,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2019-06-28",
+            "tom": "2019-06-28"
+          },
+          "permisjonPermitteringId": "0302-20190628",
+          "prosent": 13.33,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2020-09-17",
+            "tom": "2020-09-17"
+          },
+          "permisjonPermitteringId": "0302-20200917",
+          "prosent": 33.33,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2018-02-09",
+            "tom": "2018-02-09"
+          },
+          "permisjonPermitteringId": "0302-20180209",
+          "prosent": 26.67,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2018-03-23",
+            "tom": "2018-03-23"
+          },
+          "permisjonPermitteringId": "0201-20180323",
+          "prosent": 53.33,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2018-04-17",
+            "tom": "2018-04-17"
+          },
+          "permisjonPermitteringId": "0320-20180417",
+          "prosent": 46.67,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2020-08-28",
+            "tom": "2020-08-28"
+          },
+          "permisjonPermitteringId": "0302-20200828",
+          "prosent": 100.0,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2020-04-24",
+            "tom": "2020-04-24"
+          },
+          "permisjonPermitteringId": "0302-20200424",
+          "prosent": 66.67,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2020-02-27",
+            "tom": "2020-02-27"
+          },
+          "permisjonPermitteringId": "0302-20200227",
+          "prosent": 46.67,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2020-01-16",
+            "tom": "2020-01-16"
+          },
+          "permisjonPermitteringId": "0302-20200116",
+          "prosent": 100.0,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2020-01-21",
+            "tom": "2020-01-21"
+          },
+          "permisjonPermitteringId": "0302-20200121",
+          "prosent": 13.33,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2019-08-26",
+            "tom": "2019-08-26"
+          },
+          "permisjonPermitteringId": "0302-20190826",
+          "prosent": 33.33,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2019-09-19",
+            "tom": "2019-09-19"
+          },
+          "permisjonPermitteringId": "0302-20190919",
+          "prosent": 80.0,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2019-06-04",
+            "tom": "2019-06-04"
+          },
+          "permisjonPermitteringId": "0201-20190604",
+          "prosent": 86.67,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2019-06-14",
+            "tom": "2019-06-14"
+          },
+          "permisjonPermitteringId": "0302-20190614",
+          "prosent": 46.67,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2019-07-12",
+            "tom": "2019-07-12"
+          },
+          "permisjonPermitteringId": "0302-20190712",
+          "prosent": 60.0,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2019-01-11",
+            "tom": "2019-01-11"
+          },
+          "permisjonPermitteringId": "0302-20190111",
+          "prosent": 13.33,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2019-01-17",
+            "tom": "2019-01-17"
+          },
+          "permisjonPermitteringId": "0201-20190117",
+          "prosent": 46.67,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2018-10-22",
+            "tom": "2018-10-22"
+          },
+          "permisjonPermitteringId": "0302-20181022",
+          "prosent": 33.33,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2021-02-08",
+            "tom": "2021-02-08"
+          },
+          "permisjonPermitteringId": "0302-20210208",
+          "prosent": 13.33,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2020-08-11",
+            "tom": "2020-08-12"
+          },
+          "permisjonPermitteringId": "0302-20200811",
+          "prosent": 33.33,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2021-01-20",
+            "tom": "2021-01-20"
+          },
+          "permisjonPermitteringId": "0302-20210120",
+          "prosent": 20.0,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2018-09-14",
+            "tom": "2018-09-14"
+          },
+          "permisjonPermitteringId": "0302-20180914",
+          "prosent": 20.0,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2018-08-14",
+            "tom": "2018-08-14"
+          },
+          "permisjonPermitteringId": "0201-20180814",
+          "prosent": 40.0,
+          "type": "PERMISJON",
+          "varslingskode": null
+        },
+        {
+          "periode": {
+            "fom": "2020-08-26",
+            "tom": "2020-08-26"
+          },
+          "permisjonPermitteringId": "0302-20200826",
+          "prosent": 66.67,
+          "type": "PERMISJON",
+          "varslingskode": null
+        }
+      ]
+    }
+  ],
+  "oppgaver": [
+    {
+      "aktivDato": "2019-03-15",
+      "prioritet": "NORM",
+      "status": "FERDIGSTILT",
+      "tema": "MED"
+    },
+    {
+      "aktivDato": "2019-03-25",
+      "prioritet": "NORM",
+      "status": "FERDIGSTILT",
+      "tema": "MED"
+    },
+    {
+      "aktivDato": "2019-04-08",
+      "prioritet": "NORM",
+      "status": "FERDIGSTILT",
+      "tema": "MED"
+    },
+    {
+      "aktivDato": "2019-03-18",
+      "prioritet": "NORM",
+      "status": "FERDIGSTILT",
+      "tema": "MED"
+    },
+    {
+      "aktivDato": "2019-04-16",
+      "prioritet": "NORM",
+      "status": "FERDIGSTILT",
+      "tema": "MED"
+    }
+  ],
+  "dokument": [
+    {
+      "journalpostId": "448802788",
+      "tittel": "A1 Attest om den trygdelovgivning som den innehavende er omfattet av",
+      "journalposttype": "U",
+      "journalstatus": "FERDIGSTILT",
+      "tema": "MED",
+      "sak": {
+        "fagsakId": null
+      },
+      "datoOpprettet": "2021-09-13T14:50:43",
+      "dokumenter": [
+        {
+          "dokumentId": "464516942",
+          "tittel": "A1 Attest om den trygdelovgivning som den innehavende er omfattet av"
+        }
+      ]
+    },
+    {
+      "journalpostId": "448705650",
+      "tittel": "Uttalelse",
+      "journalposttype": "I",
+      "journalstatus": "JOURNALFOERT",
+      "tema": "MED",
+      "sak": {
+        "fagsakId": null
+      },
+      "datoOpprettet": "2021-09-13T14:50:43",
+      "dokumenter": [
+        {
+          "dokumentId": "464397847",
+          "tittel": "Uttalelse"
+        }
+      ]
+    },
+    {
+      "journalpostId": "447299784",
+      "tittel": "Vedtak om pliktig medlemskap",
+      "journalposttype": "U",
+      "journalstatus": "FERDIGSTILT",
+      "tema": "MED",
+      "sak": {
+        "fagsakId": null
+      },
+      "datoOpprettet": "2021-09-13T14:50:43",
+      "dokumenter": [
+        {
+          "dokumentId": "462684318",
+          "tittel": "Vedtak om pliktig medlemskap"
+        }
+      ]
+    },
+    {
+      "journalpostId": "447224293",
+      "tittel": "Søknad om A1 ? Avklaring av trygdetilhørighet ved yrkesaktivitet innen EØS/Sveits",
+      "journalposttype": "I",
+      "journalstatus": "JOURNALFOERT",
+      "tema": "MED",
+      "sak": {
+        "fagsakId": null
+      },
+      "datoOpprettet": "2021-09-13T14:50:43",
+      "dokumenter": [
+        {
+          "dokumentId": "462595275",
+          "tittel": "Søknad om A1 ? Avklaring av trygdetilhørighet ved yrkesaktivitet innen EØS/Sveits"
+        }
+      ]
+    }
+  ],
+  "ytelse": "SYKEPENGER",
+  "dataOmBarn": [
+    {
+      "personhistorikkBarn": {
+        "ident": "27059940029",
+        "bostedsadresser": [
+          {
+            "landkode": "NOR",
+            "fom": "1999-05-27",
+            "tom": "2020-08-02",
+            "historisk": true
+          },
+          {
+            "landkode": "NOR",
+            "fom": "2020-08-03",
+            "tom": null,
+            "historisk": false
+          }
+        ],
+        "kontaktadresser": [],
+        "oppholdsadresser": [],
+        "forelderBarnRelasjon": [
+          {
+            "relatertPersonsIdent": "16116343073",
+            "relatertPersonsRolle": "MOR",
+            "minRolleForPerson": "BARN"
+          },
+          {
+            "relatertPersonsIdent": "15076641754",
+            "relatertPersonsRolle": "FAR",
+            "minRolleForPerson": "BARN"
+          }
+        ]
+      }
+    }
+  ],
+  "dataOmEktefelle": null,
+  "overstyrteRegler": {},
+  "oppholdstillatelse": null,
+  "startDatoForYtelse": "2021-01-24"
+}

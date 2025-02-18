@@ -1,0 +1,11 @@
+{
+  "fnr": "123456789",
+  "periode": {
+    "fom": "2015-12-31",
+    "tom": "2019-12-31"
+  },
+  "brukerinput": {
+    "arbeidUtenforNorge": false
+  },
+  "ytelse": "SYKEPENGER"
+}
